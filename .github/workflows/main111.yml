@@ -65,17 +65,6 @@ jobs:
           cd $GITHUB_WORKSPACE/kernel_workspace/android_kernel
           curl -LSs "https://raw.githubusercontent.com/ShirkNeko/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-dev
 
-      - name: 4.集成KSU
-        run: |
-          ls
-          echo "进入源码目录"
-          cd $GITHUB_WORKSPACE/kernel_workspace/android_kernel
-          bash $GITHUB_WORKSPACE/patches/patches.sh
-          # cp $GITHUB_WORKSPACE/kernel_workspace/src/patches/* .
-          # patch -p1 < new_defconfig.patch
-          # patch -p1 < non-kprobes.patch
-          # tail -n 10 arch/arm64/configs/vendor/umi_defconfig
-
       - name: 5.应用susfs补丁
         run: |
           if [ ${{ inputs.susfs }} = true ]; then
