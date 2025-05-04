@@ -71,11 +71,11 @@ jobs:
             echo "选择集成susfs"
             cd $GITHUB_WORKSPACE/kernel_workspace/android_kernel
             echo "复制susfs/kernel_patches/fs/* 的内容"
-            cp $GITHUB_WORKSPACE/kernel_workspace/susfs4ksu/kernel_patches/fs/* ./fs/
+            cp $GITHUB_WORKSPACE/kernel_workspace/susfs/kernel_patches/fs/* ./fs/
             echo "复制susfs/kernel_patches/include/linux/* 的内容"
-            cp $GITHUB_WORKSPACE/kernel_workspace/susfs4ksu/kernel_patches/include/linux/* ./include/linux/
+            cp $GITHUB_WORKSPACE/kernel_workspace/susfs/kernel_patches/include/linux/* ./include/linux/
             echo "复制susfs内核源码补丁"
-            cp $GITHUB_WORKSPACE/kernel_workspace/susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch .
+            cp $GITHUB_WORKSPACE/kernel_workspace/susfs/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch .
             echo "执行susfs补丁"
             patch -p1 < 10_enable_susfs_for_ksu.patch        
           else
